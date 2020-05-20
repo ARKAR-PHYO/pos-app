@@ -13,9 +13,9 @@ class Everlisttype extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function everlistmaster()
+    public function everlisttypes()
     {
-        return $this->belongsTo(Everlistmaster::class);
+        return $this->hasMany(Everlisttype::class);
     }
 
     public function getUrlAttribute()

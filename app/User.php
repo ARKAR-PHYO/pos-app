@@ -47,9 +47,4 @@ class User extends Authenticatable
         // return route('everlisttye.show', $this->id);
         return "#";
     }
-
-    public function everlistmasters()
-    {
-        return $this->hasMany(Everlistmaster::class);
-    }
 }

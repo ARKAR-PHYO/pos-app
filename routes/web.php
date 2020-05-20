@@ -24,4 +24,3 @@ Route::get('/', function() {
 });
 
 Route::resource('/everlisttype', 'EverlisttypeController');
-Route::resource('everlistmasters', 'EverlistmastersController');
