@@ -13,6 +13,11 @@ class Everlisttype extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function everlistmaster()
+    {
+        return $this->belongsTo(Everlistmaster::class);
+    }
+
     public function getUrlAttribute()
     {
         return route('everlisttye.show', $this->id);
@@ -28,4 +33,8 @@ class Everlisttype extends Model
         return $this->updated_at->format("d/m/Y");
     }
 
+    public function getEverlistTypeNameAttribute()
+    {
+        return $this->everlisttype;
+    }
 }

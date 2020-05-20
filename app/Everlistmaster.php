@@ -12,4 +12,14 @@ class Everlistmaster extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function everlisttypes()
+    {
+        return $this->hasMany(Everlisttype::class);
+    }
+
+    public function getEverlistTypeNameAttribute()
+    {
+        return $this->everlisttype;
+    }
 }

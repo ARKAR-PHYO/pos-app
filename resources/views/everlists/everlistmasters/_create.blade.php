@@ -7,7 +7,7 @@
                     <div class="card-header">{{ __('Create EverList Type') }}</div>
                     <div class="card-body">
                         <form action="{{ route('everlistmasters.store') }}" method="POST">
-                            @include('everlists._form', ['buttonText' => "Save"])
+                            @include('everlists.everlistmasters._form', ['buttonText' => "Save"])
                         </form>
                     </div>
                 </div>
