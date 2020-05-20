@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Create EverList Type') }}</div>
+                    <div class="card-header">{{ __('Create EverList Master') }}</div>
                     <div class="card-body">
-                        <form action="{{ route('everlisttype.store') }}" method="POST">
-                            @include('everlists._form', ['buttonText' => "Save"])
+                        <form action="{{ route('everlistmasters.store') }}" method="POST">
+                            @include('everlists.masters._form', ['buttonText' => "Save"])
                         </form>
                     </div>
                 </div>

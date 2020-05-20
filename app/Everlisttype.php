@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Everlisttype extends Model
 {
+    use DateableTrait;
+
     protected $fillable = ['everlisttype'];
 
     public function user()
@@ -21,16 +23,6 @@ class Everlisttype extends Model
     public function getUrlAttribute()
     {
         return route('everlisttye.show', $this->id);
-    }
-
-    public function getCreatedDateAttribute()
-    {
-        return $this->created_at->format("d/m/Y");
-    }
-
-    public function getUpdatedDateAttribute()
-    {
-        return $this->updated_at->format("d/m/Y");
     }
 
     public function getEverlistTypeNameAttribute()

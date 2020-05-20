@@ -5,7 +5,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    {{ __('EverList Type') }}
+                    {{ __('EverList Master') }}
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered">
@@ -23,10 +23,10 @@
                         </tbody>
                     </table>
 
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <User-Info :model="{{ $everlisttype }}" created="Created Date:" updated="Updated Date:"></User-Info>
+                    <div class="info">
+                        <p><small>Created date:: <strong class="text-muted">{{ $everlisttype->created_date }}</strong></small></p>
+                        <p><small>Updated date:: <strong class="text-muted">{{ $everlisttype->updated_date }}</strong></small></p>
+                        <p><small>By:: <a href="{{ $everlisttype->user->url }}">{{ $everlisttype->user->name }}</a></small></p>
                     </div>
                 </div>
             </div>
