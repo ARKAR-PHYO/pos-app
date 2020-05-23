@@ -27,7 +27,7 @@
                             <tr>
                                 <th scope="row">{{ $ever->id }}</th>
                                 <td>{{ $ever->name }}</td>
-                                <td>{{ $ever->everlisttype->everlisttype }}</td>
+                                <td>{{ $ever->everlisttype->everlisttypenames }}</td>
                                 <td>{{ $ever->phno }}</td>
                                 <td>
                                     <a href="{{ route('everlistmasters.show', $ever->id) }}" class="btn btn-primary btn-pill btn-sm"><i class="cil-zoom-in btn-icon mr-2"></i>{{ __('View') }}</a>

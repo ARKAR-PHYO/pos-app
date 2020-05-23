@@ -12,21 +12,32 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">EverList Type</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Everlist Type</th>
+                                <th scope="col">Owner Name</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Address</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">{{ $everlisttype->id }}</th>
-                                <td>{{ $everlisttype->everlisttype }}</td>
+                                <th scope="row">{{ $everlistmaster->id }}</th>
+                                <td>{{ $everlistmaster->name }}</td>
+                                <td>{{ $everlistmaster->everlisttype->everlisttypenames }}</td>
+                                <td>{{ $everlistmaster->ownername }}</td>
+                                <td>{{ $everlistmaster->phno }}</td>
+                                <td>{{ $everlistmaster->address }}</td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="float-left">
+                        <a href="{{ route('everlistmasters.index') }}" class="btn btn-primary btn-md"><i class="cil-arrow-left btn-icon mr-2"></i>{{ __('Go Back') }}</a>
+                    </div>
 
-                    <div class="info">
-                        <p><small>Created date:: <strong class="text-muted">{{ $everlisttype->created_date }}</strong></small></p>
-                        <p><small>Updated date:: <strong class="text-muted">{{ $everlisttype->updated_date }}</strong></small></p>
-                        <p><small>By:: <a href="{{ $everlisttype->user->url }}">{{ $everlisttype->user->name }}</a></small></p>
+                    <div class="float-right">
+                        <p><small>Created date:: <strong class="text-muted">{{ $everlistmaster->created_date }}</strong></small></p>
+                        <p><small>Updated date:: <strong class="text-muted">{{ $everlistmaster->updated_date }}</strong></small></p>
+                        <p><small>By:: <a href="{{ $everlistmaster->user->url }}">{{ $everlistmaster->user->name }}</a></small></p>
                     </div>
                 </div>
             </div>

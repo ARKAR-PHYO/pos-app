@@ -24,7 +24,7 @@ class CreateEverlisttypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'everlisttype' => 'required|max:255',
+            'everlisttypenames' => 'required|max:255',
         ];
     }
 }

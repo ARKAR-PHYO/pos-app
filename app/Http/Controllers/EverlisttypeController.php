@@ -31,9 +31,9 @@ class EverlisttypeController extends Controller
      */
     public function create()
     {
-        $everlisttype = new Everlisttype();
+        $everlisttypes = new Everlisttype();
 
-        return view('everlists.create', compact('everlisttype'));
+        return view('everlists.create', compact('everlisttypes'));
     }
 
     /**
@@ -44,7 +44,7 @@ class EverlisttypeController extends Controller
      */
     public function store(CreateEverlisttypeRequest $request)
     {
-        $request->user()->everlisttypes()->create($request->only('everlisttype'));
+        $request->user()->everlisttypes()->create($request->only('everlisttypenames'));
         return redirect()->route('everlisttype.index')->with('success', "Your EverList Type has been CREATED!!!");
     }
 
@@ -55,9 +55,8 @@ class EverlisttypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $everlisttype = Everlisttype::findOrFail($id);
-        return view('everlists.show', compact('everlisttype'));
+    { 
+        return view('everlists.show' , ['everlisttypes' => Everlisttype::FindOrFail($id)]);
     }
 
     /**
@@ -66,9 +65,9 @@ class EverlisttypeController extends Controller
      * @param  \App\Everlisttype  $everlisttype
      * @return \Illuminate\Http\Response
      */
-    public function edit(Everlisttype $everlisttype)
+    public function edit(Everlisttype $everlisttypes)
     {
-        return view('everlists.edit', compact('everlisttype'));
+        return view('everlists.edit', compact(['everlisttypes' => new Everlisttype()]));
     }
 
     /**
@@ -78,9 +77,9 @@ class EverlisttypeController extends Controller
      * @param  \App\Everlisttype  $everlisttype
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateEverlisttypeRequest $request, Everlisttype $everlisttype)
+    public function update(CreateEverlisttypeRequest $request, Everlisttype $everlisttypes)
     {
-        $everlisttype->update($request->only('everlisttype'));
+        $everlisttypes->update($request->only('everlisttypenames'));
         return redirect()->route('everlisttype.index')->with('success', "Your EverList Type has been UPDATED!!!");
     }
 
@@ -90,9 +89,9 @@ class EverlisttypeController extends Controller
      * @param  \App\Everlisttype  $everlisttype
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Everlisttype $everlisttype)
+    public function destroy(Everlisttype $everlisttypes)
     {
-        $everlisttype->delete();
+        $everlisttypes->delete();
         return redirect()->route('everlisttype.index')->with('success', "Your Everlist Type has been DELETED!!");
     }
 }

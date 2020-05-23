@@ -17,8 +17,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">{{ $everlisttype->id }}</th>
-                                <td>{{ $everlisttype->everlisttype }}</td>
+                                <th scope="row">{{ $everlisttypes->id }}</th>
+                                <td>{{ $everlisttypes->everlisttypenames }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -26,7 +26,9 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <User-Info :model="{{ $everlisttype }}" created="Created Date:" updated="Updated Date:"></User-Info>
+                        <p><small>Created date:: <strong class="text-muted">{{ $everlisttypes->created_date }}</strong></small></p>
+                        <p><small>Updated date:: <strong class="text-muted">{{ $everlisttypes->updated_date }}</strong></small></p>
+                        <p><small>By:: <a href="{{ $everlisttypes->user->url }}">{{ $everlisttypes->user->name }}</a></small></p>
                     </div>
                 </div>
             </div>

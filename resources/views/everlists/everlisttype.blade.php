@@ -24,14 +24,14 @@
                         </thead>
                         
                         <tbody>
-                            @forelse ($everlisttypes as $ever)
+                            @forelse ($everlisttypes as $everlisttype)
                             <tr>
-                                <th scope="row">{{ $ever->id }}</th>
-                                <td>{{ $ever->everlisttype }}</td>
+                                <th scope="row">{{ $everlisttype->id }}</th>
+                                <td>{{ $everlisttype->everlisttypenames }}</td>
                                 <td>
-                                    <a href="{{ route('everlisttype.show', $ever->id) }}" class="btn btn-primary btn-sm"><i class="cil-zoom-in btn-icon mr-2"></i>View</a>
-                                    <a href="{{ route('everlisttype.edit', $ever->id) }}" class="btn btn-success btn-sm"><i class="cil-pencil btn-icon mr-2"></i>Edit</a>
-                                    <form class="form-delete" action="{{ route('everlisttype.destroy', $ever->id) }}" method="POST">
+                                    <a href="{{ route('everlisttype.show', $everlisttype->id) }}" class="btn btn-primary btn-sm"><i class="cil-zoom-in btn-icon mr-2"></i>View</a>
+                                    <a href="{{ route('everlisttype.edit', $everlisttype->id) }}" class="btn btn-success btn-sm"><i class="cil-pencil btn-icon mr-2"></i>Edit</a>
+                                    <form class="form-delete" action="{{ route('everlisttype.destroy', $everlisttype->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger btn-sm" onclick="return confirm('Are You Sure??')"><i class="cil-trash btn-icon mr-2"></i>Delete</button>

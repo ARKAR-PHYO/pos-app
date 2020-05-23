@@ -5,12 +5,12 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        Edit EverList Type
+                        Edit EverList Master
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('everlisttype.update', $everlisttypes->id) }}" method="POST">)
+                        <form action="{{ route('everlistmasters.update', $everlistmaster->id) }}" method="POST">
                             @method('PUT')
-                            @include('everlists._form', ['buttonText' => "Update"])
+                            @include('everlists.masters._form', ['buttonText' => "Update"])
                         </form>
                     </div>
                 </div>

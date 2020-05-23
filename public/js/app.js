@@ -29829,16 +29829,13 @@ __webpack_require__.r(__webpack_exports__);
   props: ['model', 'created', 'updated'],
   computed: {
     createDate: function createDate() {
-      return this.created + " " + this.model.created_date;
+      return this.model.create_date;
     },
-    updateDate: function updateDate() {
-      return this.updated + " " + this.model.updated_date;
+    updateDate: function updateDate() {// return this.updated + " " + this.model.updated_date;
     }
   },
   data: function data() {
-    return {
-      user: this.model.user
-    };
+    return {};
   }
 });
 
@@ -66747,14 +66744,6 @@ var render = function() {
         _c("small", [
           _c("strong", { staticClass: "text-muted" }, [
             _vm._v(_vm._s(_vm.createDate))
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("small", [
-          _c("strong", { staticClass: "text-muted" }, [
-            _vm._v(_vm._s(_vm.updateDate))
           ])
         ])
       ])

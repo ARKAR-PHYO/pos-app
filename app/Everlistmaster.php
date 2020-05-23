@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Everlistmaster extends Model
 {
-    // use DatedetailTrait;
+    use DateableTrait;
     protected $fillable = ['name', 'ownername', 'phno', 'address', 'everlisttype_id', 'user_id'];
 
     public function user()
